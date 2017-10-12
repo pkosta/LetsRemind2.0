@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">LetsRemind</string>
+    <string name="et_hint_label_user_name">Email</string>
+    <string name="et_hint_label_password">Password</string>
+    <string name="et_hint_label_reenter_password">Re-enter Password</string>
+    <string name="btn_sign_up_text">Next</string>
+
+    <string name="btn_register_text">Sign Up</string>
+    <string name="btn_log_in_text">Log In</string>
+    <string name="btn_welcome_sign_in">Sign In</string>
+    <string name="btn_welcome_sign_up">Sign Up</string>
+
+    <string name="facebook_app_id">206873323184152</string>
+    <string name="fb_login_protocol_scheme">fb206873323184152</string>
+    <string name="title_activity_base">BaseActivity</string>
+
+
+    <string name="cd_welcome_screen_logo">Welcome Logo</string>
+    <string name="msg_welcome_screen">Welcome to Let\'s Remind</string>
+
+
+    <!-- Profile Activity -->
+    <string name="et_hint_label_first_name">First Name</string>
+    <string name="et_hint_label_last_name">Last Name</string>
+    <string name="btn_profile_get_started">Get Started</string>
+
+    <!-- Login Activity -->
+    <string name="btn_login_sign_in">Log In</string>
+
+    <!-- error messages -->
+    <string name="error_title_email_not_valid">Invalid Email</string>
+    <string name="error_message_email_not_valid">Email id is either empty or invalid.
+        Please input valid email id</string>
+
+    <string name="error_title_password_not_valid">Invalid Password</string>
+    <string name="error_message_password_not_valid">Please input valid password. Password should contain atleast 6 digits</string>
+
+    <string name="error_title_password_not_match">Passwords Not Matched</string>
+    <string name="error_message_password_not_match">Both password fields do not match. Please input same passwords</string>
+    <string name="connect_with_text">Or Connect With</string>
+
+</resources>

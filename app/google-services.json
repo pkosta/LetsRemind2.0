@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "108267436575",
+    "firebase_url": "https://letsremind20.firebaseio.com",
+    "project_id": "letsremind20",
+    "storage_bucket": "letsremind20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108267436575:android:2048c1a14d173ed2",
+        "android_client_info": {
+          "package_name": "palash.watermelon.letsremind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "108267436575-bkshprncesu5tuun38cta7n66ptab85n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "palash.watermelon.letsremind",
+            "certificate_hash": "1c181453bc74b1941d907c6e62608030d5a34ca6"
+          }
+        },
+        {
+          "client_id": "108267436575-k2ev0b3odac5segopqclobbc8dbpf0du.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7K0siVllno3u-1bVpIwzPyAr7x6UHI1s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "108267436575-k2ev0b3odac5segopqclobbc8dbpf0du.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
