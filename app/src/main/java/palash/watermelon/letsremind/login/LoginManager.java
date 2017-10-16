@@ -10,7 +10,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
+import javax.inject.Inject;
+
 import palash.watermelon.letsremind.datamodel.AppUser;
+import palash.watermelon.letsremind.utility.SharedPreferenceManager;
 
 /*
  * Created by Palash on 23/09/17.

@@ -21,17 +21,18 @@ import palash.watermelon.letsremind.login.IProfileUpdateResult;
 import palash.watermelon.letsremind.login.LoginManager;
 import palash.watermelon.letsremind.userinterface.BaseActivity;
 import palash.watermelon.letsremind.userinterface.WelcomeActivity;
+import palash.watermelon.letsremind.utility.SharedPreferenceKeys;
 import palash.watermelon.letsremind.utility.SharedPreferenceManager;
 
 public class ProfileActivity extends AppCompatActivity implements IProfileUpdateResult {
 
-    private ActivityProfileBinding mBindingLayout;
+    public ActivityProfileBinding mBindingLayout;
 
     @Inject
-    protected LoginManager mLoginManager;
+    public LoginManager mLoginManager;
 
     @Inject
-    protected SharedPreferenceManager mSharedPreferenceManager ;
+    public SharedPreferenceManager mSharedPreferenceManager ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +73,10 @@ public class ProfileActivity extends AppCompatActivity implements IProfileUpdate
 
     @Override
     public void onProfileUpdateSuccess() {
+
+        mSharedPreferenceManager.putPreferenceBooleanValueSync(
+                SharedPreferenceKeys.IS_USER_LOGGED_IN, true);
+
         Intent welcomeActivityIntent = new Intent(
                 ProfileActivity.this, WelcomeActivity.class);
         startActivity(welcomeActivityIntent);

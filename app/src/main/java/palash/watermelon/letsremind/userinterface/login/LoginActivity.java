@@ -20,10 +20,10 @@ import palash.watermelon.letsremind.userinterface.*;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, ILoginResult {
 
-    private ActivityLoginBinding mBindingLayout;
+    public ActivityLoginBinding mBindingLayout;
 
     @Inject
-    LoginManager mLoginManager;
+    public LoginManager mLoginManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

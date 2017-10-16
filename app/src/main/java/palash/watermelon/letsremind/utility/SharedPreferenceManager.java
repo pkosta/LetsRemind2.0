@@ -32,4 +32,14 @@ public class SharedPreferenceManager {
         return preferences.getString(key, "");
     }
 
+    public void putPreferenceBooleanValueSync(String key, Boolean value) {
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean(key, value);
+        editor.apply();
+    }
+
+    public Boolean getPreferenceBooleanValueWithKey(String key) {
+        return preferences.getBoolean(key, false);
+    }
+
 }

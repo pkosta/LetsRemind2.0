@@ -15,7 +15,7 @@ import palash.watermelon.letsremind.databinding.ActivityLoginWelcomeBinding;
 
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener{
 
-    ActivityLoginWelcomeBinding mBindingLayout;
+    public ActivityLoginWelcomeBinding mBindingLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

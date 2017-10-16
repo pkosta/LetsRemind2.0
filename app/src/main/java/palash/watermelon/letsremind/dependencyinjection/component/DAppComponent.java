@@ -5,6 +5,7 @@ package palash.watermelon.letsremind.dependencyinjection.component;
  */
 
 import android.app.Application;
+import android.content.Context;
 
 import javax.inject.Singleton;
 
@@ -16,6 +17,7 @@ import palash.watermelon.letsremind.dependencyinjection.module.DAppModule;
 import palash.watermelon.letsremind.dependencyinjection.module.DLoginModule;
 import palash.watermelon.letsremind.dependencyinjection.module.activitymodule.LoginActivityModule;
 import palash.watermelon.letsremind.dependencyinjection.module.activitymodule.ProfileActivityModule;
+import palash.watermelon.letsremind.dependencyinjection.module.activitymodule.SplashActivityModule;
 
 @Singleton
 @Component(
@@ -24,7 +26,8 @@ import palash.watermelon.letsremind.dependencyinjection.module.activitymodule.Pr
                 DAppModule.class,
                 DLoginModule.class,
                 ProfileActivityModule.class,
-                LoginActivityModule.class
+                LoginActivityModule.class,
+                SplashActivityModule.class
         }
 )
 public interface DAppComponent {
@@ -33,6 +36,8 @@ public interface DAppComponent {
     interface Builder {
         @BindsInstance
         Builder application(Application application);
+        /*@BindsInstance
+        Builder context(Context context);*/
         DAppComponent build();
     }
 
