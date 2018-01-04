@@ -89,8 +89,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onLoginSuccess(AppUser user) {
         showProgressBar(false); //hide the progress bar
         Intent welcomeActivityIntent = new Intent(
-                this, palash.watermelon.letsremind.userinterface.WelcomeActivity.class);
+                this, HomeActivity.class);
+        welcomeActivityIntent
+                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(welcomeActivityIntent);
+        finish();
     }
 
     @Override

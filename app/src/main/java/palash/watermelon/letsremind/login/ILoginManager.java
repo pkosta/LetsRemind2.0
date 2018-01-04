@@ -7,6 +7,7 @@ package palash.watermelon.letsremind.login;
 import org.jetbrains.annotations.Nullable;
 
 import palash.watermelon.letsremind.datamodel.AppUser;
+import palash.watermelon.letsremind.datamodel.User;
 
 public interface ILoginManager {
 
@@ -14,7 +15,7 @@ public interface ILoginManager {
 
     void signIn(String userId, String password);
 
-    void setProfile(AppUser user);
+    void setProfile(User user);
 
     void forgotPassword(String userId);
 
@@ -29,4 +30,18 @@ public interface ILoginManager {
     void registerToProfileUpdate(IProfileUpdateResult result);
 
     void unregisterToProfileUpdate();
+
+    void signOut();
+
+    boolean isProfileAdded();
+
+    boolean isUserLoggedIn();
+
+    void registerToProfileFetchListener(IProfileFetchResult result);
+
+    void unregisterToProfileFetchResult();
+
+    void registerToDataStorage(IDataStorageResult result);
+
+    void unregisterToDataStorage();
 }

@@ -11,6 +11,7 @@ import com.facebook.FacebookSdk;
 
 import palash.watermelon.letsremind.R;
 import palash.watermelon.letsremind.databinding.ActivityLoginWelcomeBinding;
+import palash.watermelon.letsremind.repository.WorkListRepository;
 
 
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener{
@@ -27,6 +28,9 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         mBindingLayout.btnSignUpProcess.setOnClickListener(this);
 
         mBindingLayout.btnSignInProcess.setOnClickListener(this);
+
+        /*WorkListRepository repo = new WorkListRepository();
+        repo.getWorkList();*/
 
     }
 

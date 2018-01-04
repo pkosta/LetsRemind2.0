@@ -1,89 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
 
-        <RelativeLayout
-            xmlns:tools="http://schemas.android.com/tools"
+            <RelativeLayout
+                android:id="@+id/rl_outside_layout"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_16"
+                tools:context="palash.watermelon.letsremind.userinterface.login.ProfileActivity">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:src="@drawable/ic_person_placeholder"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_40"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="#FF000000" />
+
+                <TextView
+                    android:id="@+id/tv_show_logged_in_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:textColor="@color/mainFocusColor"
+                    android:text=""/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_show_logged_in_user"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:theme="@style/TextLabel">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tie_first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/et_hint_label_first_name"
+                        android:textColorHint="@android:color/white"
+                        android:inputType="textPersonName"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/til_first_name"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:theme="@style/TextLabel">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tie_last_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/et_hint_label_last_name"
+                        android:inputType="textPersonName"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <!-- Get Started Button -->
+                <Button
+                    android:id="@+id/btn_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:theme="@style/AppTheme.WhiteButton"
+                    android:text="@string/btn_profile_get_started"
+                    android:layout_below="@id/til_last_name"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/tv_different_sign_in_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btn_sign_up"
+                    android:layout_centerHorizontal="true"
+                    android:padding="@dimen/dp_8"
+                    android:textColor="@color/colorAccent"
+                    android:text="@string/tv_different_sign_in_option" />
+
+                <ProgressBar
+                    android:id="@+id/indeterminateBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/btn_sign_up"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/dp_32"
+                    android:visibility="gone"
+                    />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/overlay"
+            android:background="@color/md_bottom_sheet_overlay_fill"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+<!--
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/bottom_sheet_menu_options"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dp_16"
-            tools:context="palash.watermelon.letsremind.userinterface.login.ProfileActivity">
+            android:clipToPadding="true"
+            android:background="@android:color/white"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
 
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/profile_image"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:src="@drawable/ic_person_placeholder"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/dp_40"
-                app:civ_border_width="1dp"
-                app:civ_border_color="#FF000000" />
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_first_name"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/profile_image"
-                android:layout_marginTop="@dimen/dp_24"
-                android:theme="@style/TextLabel">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/tie_first_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/et_hint_label_first_name"
-                    android:textColorHint="@android:color/white"
-                    android:inputType="textPersonName"/>
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_last_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/til_first_name"
+                android:orientation="vertical"
                 android:layout_marginTop="@dimen/dp_8"
-                android:theme="@style/TextLabel">
+                android:layout_marginBottom="@dimen/dp_8">
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/tie_last_name"
+                <TextView
+                    android:id="@+id/tv_bottom_sheet_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_56"
+                    android:gravity="center"
+                    android:text="@string/bottom_sheet_option_heading"
+                    android:textSize="16sp"
+                    android:textColor="@color/md_bottom_sheet_title_color"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"/>
+
+                <TextView
+                    android:id="@+id/tv_btn_add_photo_camera"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/et_hint_label_last_name"
-                    android:inputType="textPersonName"/>
+                    android:layout_height="@dimen/dp_48"
+                    android:text="@string/bottom_sheet_option_camera"
+                    android:textSize="16sp"
+                    android:textColor="@color/md_bottom_sheet_text_color"
+                    android:gravity="start|center_vertical"
+                    android:drawablePadding="@dimen/dp_32"
+                    android:backgroundTint="@android:color/white"
+                    android:drawableStart="@drawable/ic_add_a_photo"
+                    android:drawableTint="@color/md_bottom_sheet_text_color"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"/>
 
-            </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:id="@+id/tv_btn_add_photo_gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="@string/bottom_sheet_option_gallery"
+                    android:textSize="16sp"
+                    android:textColor="@color/md_bottom_sheet_text_color"
+                    android:gravity="start|center_vertical"
+                    android:drawablePadding="@dimen/dp_32"
+                    android:backgroundTint="@android:color/white"
+                    android:drawableStart="@drawable/ic_gallery_photo"
+                    android:drawableTint="@color/md_bottom_sheet_text_color"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayTextColor"
+                    android:layout_marginTop="@dimen/md_bottom_sheet_separator_top_margin"
+                    android:layout_marginBottom="@dimen/dp_8"/>
+
+                <TextView
+                    android:id="@+id/tv_btn_remove_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:text="@string/bottom_sheet_option_remove_photo"
+                    android:textSize="16sp"
+                    android:textColor="@color/md_bottom_sheet_text_color"
+                    android:gravity="start|center_vertical"
+                    android:drawablePadding="@dimen/dp_32"
+                    android:backgroundTint="@android:color/white"
+                    android:drawableStart="@drawable/ic_delete_photo"
+                    android:drawableTint="@color/md_bottom_sheet_text_color"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"/>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+-->
 
 
-            <!-- Get Started Button -->
-            <Button
-                android:id="@+id/btn_sign_up"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_32"
-                android:theme="@style/AppTheme.WhiteButton"
-                android:text="@string/btn_profile_get_started"
-                android:layout_below="@id/til_last_name"
-                android:textColor="@android:color/black" />
-
-            <ProgressBar
-                android:id="@+id/indeterminateBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/btn_sign_up"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/dp_32"
-                android:visibility="visible"
-                />
-
-        </RelativeLayout>
-
-    </ScrollView>
+    </android.support.design.widget.CoordinatorLayout>
 
 </layout>

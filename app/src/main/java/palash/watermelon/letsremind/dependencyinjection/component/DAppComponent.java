@@ -15,6 +15,7 @@ import dagger.android.AndroidInjectionModule;
 import palash.watermelon.letsremind.app.LRApplication;
 import palash.watermelon.letsremind.dependencyinjection.module.DAppModule;
 import palash.watermelon.letsremind.dependencyinjection.module.DLoginModule;
+import palash.watermelon.letsremind.dependencyinjection.module.activitymodule.HomeActivityModule;
 import palash.watermelon.letsremind.dependencyinjection.module.activitymodule.LoginActivityModule;
 import palash.watermelon.letsremind.dependencyinjection.module.activitymodule.ProfileActivityModule;
 import palash.watermelon.letsremind.dependencyinjection.module.activitymodule.SplashActivityModule;
@@ -27,7 +28,8 @@ import palash.watermelon.letsremind.dependencyinjection.module.activitymodule.Sp
                 DLoginModule.class,
                 ProfileActivityModule.class,
                 LoginActivityModule.class,
-                SplashActivityModule.class
+                SplashActivityModule.class,
+                HomeActivityModule.class
         }
 )
 public interface DAppComponent {
